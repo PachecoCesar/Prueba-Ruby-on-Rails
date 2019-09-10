@@ -1,25 +1,36 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <% @todos.each do |todo| %>
-        <% if todo.completed == false %>
-          <div class="row">
-            <%= todo.description %>
-            <%= todo.completed %>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="col">
-      <% @todos.each do |todo| %>
-        <% if todo.completed == true %>
-          <div class="row">
-            <%= todo.description %>
-            <%= todo.completed %>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
+<div class="card-deck">
+
+
+<div class="card list1">
+  <h3>Pendings</h3>
+  <% @todos.each do |todo| %>
+  <% if todo.completed == false %>
+  <div class="card-header">
+  <h5><%=todo.description%></h5>
+ </div>
+  <div class="card-body">
+    <p><%= "Is #{todo.description} completed? :#{todo.completed}" %></p>
   </div>
-<%= link_to "<<Atras", todos_path %>
+  <% end %>
+  <% end %>
 </div>
+
+
+
+<div class="card list2">
+  <h3>Done</h3>
+  <% @todos.each do |todo| %>
+  <% if todo.completed == true %>
+  <div class="card-header">
+  <h5><%=todo.description%></h5>
+ </div>
+  <div class="card-body">
+    <p><%= "Is #{todo.description} completed? :#{todo.completed}" %></p>
+  </div>
+  <% end %>
+  <% end %>
+</div>
+
+</div>
+<br><br>
+<%= link_to "<<Atras", todos_path, class: 'btn btn-dark btn-lg btn-block' %>

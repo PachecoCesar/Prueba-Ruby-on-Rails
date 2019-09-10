@@ -1,9 +1,9 @@
-<%= form_with model: @todo, local: true do |f|%>
-<%= f.label :description %> <br>
-<%= f.text_field :description %> <br> <br>
-
-<%= f.label :completed %><br>
-<%= f.check_box :completed %><br><br>
+<h3 class="htres">Edit ToDo</h3>
+<p><%= form_with model: @todo, local: true do |f|%></p>
+<p>Edit the <%= f.label :description %>
+<%= f.text_field :description %></p>
+<p>Is <%= f.label :completed %> this ToDo?
+<%= f.check_box :completed %></p>
 
 <%= f.submit %>
 
