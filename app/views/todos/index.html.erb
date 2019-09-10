@@ -1,5 +1,8 @@
 <div class="well">
-
+  <% @todos.each do |todo| %>
+    <p><%= "#{todo.description} completed? :#{todo.completed}" %></p>
+    <%= link_to 'show', todo  %>
+  <% end %>
 </div>
 
 
