@@ -2,23 +2,23 @@
 <h1>To Do</h1>
 
 <% @todos.each do |todo| %>
-<div class="card">
-  <div class="card-header">
-  <h5><%= todo.description %></h5>
- </div>
-  <div class="card-body">
-    <p><%= "Is #{todo.description} completed? :#{todo.completed}" %></p>
-    <%= link_to 'Show', todo, class: 'btn btn-dark'%>
-    <%= link_to 'Edit', edit_todo_path(todo), class: 'btn btn-dark' %>
-    <%= link_to 'Delete', todo, method: :delete, data: {confirm: 'are you sure?'}, class: 'btn btn-dark'%>
-    <% if todo.completed == true %>
-      <%= link_to 'Done', complete_todo_path(todo), class: 'btn btn-success'%>
-    <% else %>
-      <%= link_to 'To Do', complete_todo_path(todo), class: 'btn btn-danger'%>
-    <% end %>
+  <div class="card">
+    <div class="card-header">
+      <h5><%= todo.description %></h5>
     </div>
-</div>
-<br>
+    <div class="card-body">
+      <p><%= "Is #{todo.description} completed? :#{todo.completed}" %></p>
+      <%= link_to 'Show', todo, class: 'btn btn-dark'%>
+      <%= link_to 'Edit', edit_todo_path(todo), class: 'btn btn-dark' %>
+      <%= link_to 'Delete', todo, method: :delete, data: {confirm: 'are you sure?'}, class: 'btn btn-dark'%>
+      <% if todo.completed == true %>
+        <%= link_to 'Done', complete_todo_path(todo), class: 'btn btn-success'%>
+      <% else %>
+        <%= link_to 'To Do', complete_todo_path(todo), class: 'btn btn-danger'%>
+      <% end %>
+    </div>
+  </div>
+  <br>
 <% end %>
 <br>
 <%= link_to 'Create a new ToDo', todos_new_path, class: 'btn btn-primary btn-lg btn-block' %>
