@@ -7,7 +7,7 @@
     <% if todo.completed == true %>
       <label class="btn btn-dark">Done</label>
     <% else %>
-      <%= link_to 'Done', complete_todo_path(todo), class: 'btn btn-dark'%>
+      <%= link_to 'To Do', complete_todo_path(todo), class: 'btn btn-dark'%>
     <% end %>
   <% end %>
 </div>

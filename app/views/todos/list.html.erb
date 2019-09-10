@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <% @todos.each do |todo| %>
+        <% if todo.completed == false %>
+          <div class="row">
+            <%= todo.description %>
+            <%= todo.completed %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="col">
+      <% @todos.each do |todo| %>
+        <% if todo.completed == true %>
+          <div class="row">
+            <%= todo.description %>
+            <%= todo.completed %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<%= link_to "<<Atras", todos_path %>
+</div>
