@@ -3,6 +3,7 @@
     <p><%= "#{todo.description} completed? :#{todo.completed}" %></p>
     <%= link_to 'Show', todo  %>
     <%= link_to 'Edit', edit_todo_path(todo) %>
+    <%= link_to 'Delete', todo, method: :delete, data: {confirm: 'are you sure?'} %>
   <% end %>
 </div>
 
