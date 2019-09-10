@@ -4,6 +4,11 @@
     <%= link_to 'Show', todo  %>
     <%= link_to 'Edit', edit_todo_path(todo) %>
     <%= link_to 'Delete', todo, method: :delete, data: {confirm: 'are you sure?'} %>
+    <% if todo.completed == true %>
+      <label class="btn btn-dark">Done</label>
+    <% else %>
+      <%= link_to 'Done', complete_todo_path(todo), class: 'btn btn-dark'%>
+    <% end %>
   <% end %>
 </div>
 
